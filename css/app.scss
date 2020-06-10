@@ -1,0 +1,25 @@
+
+@import "reset";
+@import "typography";
+
+$primary-color: #3900f5;
+
+
+body {
+    background-color: $primary-color;
+    color: #ffffff;    
+}
+
+div.wip {
+    width:500px;
+    height:100px;
+    margin: 0 auto;
+
+    position: fixed;
+    top:50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+

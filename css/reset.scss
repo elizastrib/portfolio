@@ -23,25 +23,20 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
 body {
   line-height: 1;
 }
-
 ol, ul {
   list-style: none;
 }
-
 blockquote, q {
   quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: "";
+  content: '';
   content: none;
 }
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -63,63 +58,3 @@ input, textarea, select {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
-@font-face {
-  font-family: Space Grotesk;
-  src: url(fonts/spacegrotesk-regular.woff2), url(fonts/spacegrotesk-regular.woff);
-}
-@font-face {
-  font-family: Space Grotesk Bold;
-  src: url(spacegrotesk-bold.woff2), url(spacegrotesk-regular.woff);
-}
-body {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-h1 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 15px;
-  font-family: Space Grotesk Bold, Arial;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-body {
-  background-color: #3900f5;
-  color: #ffffff;
-}
-
-div.wip {
-  width: 500px;
-  height: 100px;
-  margin: 0 auto;
-  position: fixed;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/*# sourceMappingURL=app.css.map */
