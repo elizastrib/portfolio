@@ -1,25 +1,158 @@
 
-@import "reset";
 @import "typography";
 
-$primary-color: #3900f5;
+@mixin center-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+@mixin hide {
+    z-index: -5;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+@mixin show($index) {
+    z-index: $index;
+    display: block;
+    opacity: 1;
+}
+
+
+
+// COLORS
+
+$primary-color: #3900f5;
+$secondary-color: #ffffff;
+$text-color: #2e3e4f;
+
+
+
+// GENERAL STYLES
 
 body {
     background-color: $primary-color;
-    color: #ffffff;    
+    color: $secondary-color;    
 }
 
-div.wip {
-    width:500px;
-    height:100px;
-    margin: 0 auto;
 
-    position: fixed;
-    top:50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
 
-    text-align: center;
+// MAIN CONTENT
+
+section#main {
+
+    @include center-position;
+
+    width: 80vw;
+    max-width: 1260px;
+    display: flex;
+    justify-content: space-between;
+
+    section {
+        width: 45%;
+    }
+
 }
 
+div.links {
+
+    margin-top: 0;
+
+    a {
+        margin-right: 20px;
+    }
+
+}
+
+div.project {
+
+    cursor: pointer;
+
+    h2 {
+        margin-bottom: 8px;
+    }
+
+    p{
+        margin-top:0px;
+    }
+}
+
+
+
+// MODAL
+
+div#modal-bg {
+
+    @include hide;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &.show {
+        @include show(2);
+    }
+
+}
+
+div#modal {
+    @include center-position;
+    max-height: 70vh;
+    overflow: scroll;
+    padding: 32px 48px;
+    width: 50vw;
+
+    background-color: $secondary-color;
+    color: $text-color;
+
+    @include hide;
+
+    &.show {
+        @include show(10);
+    }
+
+    div.close {
+
+        position: sticky;
+        top: 0;
+        right: 0;
+        height: 0;
+        display: flex;
+        flex-direction: row-reverse;
+
+        a {
+            font-size: 12px;
+        }
+    }
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    h4 {
+        margin-top: 16px;
+    }
+
+    a {
+        color: $primary-color;
+    }
+
+    div.image {
+        margin: 40px 0;
+
+        img {
+            max-width: 100%;
+        }
+
+        h5 {
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+    }
+
+}
