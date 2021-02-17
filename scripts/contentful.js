@@ -39,46 +39,6 @@ const grabData = function () {
 }
 
 
-const modalFunctionality = function () {
-    projects.forEach(project => {
-
-        project.addEventListener('click', function(event){
-    
-            body.style.backgroundColor = project.dataset.color
-            closeLinks.forEach(link => {
-                link.style.color = project.dataset.color
-            })
-            modalLinks.forEach(link => {
-                link.style.color = project.dataset.color
-            })
-    
-            modalBG.classList.toggle('show')
-    
-            console.log('hello')
-            
-        })
-    
-        
-    })
-    
-    
-    
-    closeLinks.forEach(close => {
-        close.addEventListener('click', function(event) {
-            openModal.classList.remove('show')
-            modalBG.classList.remove('show')
-        })
-    })
-    
-    modalBG.addEventListener('click', function(event) {
-        openModal.classList.remove('show')
-        modalBG.classList.remove('show')
-    })
-
-}
-
-
-
 
 grabData()
     .then( data => {
