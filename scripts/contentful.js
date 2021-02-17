@@ -118,23 +118,20 @@ grabData()
                     
                 })
             })
-            
-
-            closeLinks.forEach(close => {
-                close.addEventListener('click', function(event) {
-                    openModal.classList.remove('show')
-                    modalBG.classList.remove('show')
-                })
-            })
-            
-            modalBG.addEventListener('click', function(event) {
-                openModal.classList.remove('show')
-                modalBG.classList.remove('show')
-            })
-            
 
         })
     })
 
 
-    
+
+closeLinks.forEach(close => {
+    close.addEventListener('click', function(event) {
+        openModal.classList.remove('show')
+        modalBG.classList.remove('show')
+    })
+})
+
+modalBG.addEventListener('click', function(event) {
+    openModal.classList.remove('show')
+    modalBG.classList.remove('show')
+})
