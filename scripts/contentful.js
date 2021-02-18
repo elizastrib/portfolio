@@ -1,6 +1,5 @@
 
 
-//import { documentToHtmlString } from '/node_modules/@contentful/rich-text-html-renderer';
 
 const spaceID = "3jcgtxpd2wcc"
 const environmentID = "master"
@@ -14,20 +13,24 @@ const modalContainer = document.querySelector('section#modal-container')
 const body = document.querySelector('body')
 
 
+
+
 const grabData = function () {
 
     return fetch(url)
         .then(response => response.json())
         .then(data => {
+
             return data.items.map(item => {
 
                 const rawContent = item.fields.content
                 const rendered = documentToHtmlString(rawContent)
                 
                 item.fields.content = rendered
-
                 return item.fields  
+                
             })
+
         })
 }
 
@@ -50,6 +53,8 @@ grabData()
             modalContainer.innerHTML = modalContainer.innerHTML + `
                 <div id="modal" data-modal="${item.tag}">
                     <div class="close"><a>close</a></div>
+                    <h1>${item.title}</h1>
+                    <h4>${item.description}</h4>
                     <div class="content">${item.content}</div>
                 </div>
             `
