@@ -1,5 +1,7 @@
 
 
+//import { documentToHtmlString } from '/node_modules/@contentful/rich-text-html-renderer';
+
 const spaceID = "3jcgtxpd2wcc"
 const environmentID = "master"
 const accessToken = "a9Vb129rJEq4_NumhQVPv8z0nCNY4Un22nLFpx6vWEg"
@@ -7,24 +9,9 @@ const accessToken = "a9Vb129rJEq4_NumhQVPv8z0nCNY4Un22nLFpx6vWEg"
 const url = "https://cdn.contentful.com/spaces/"+spaceID+"/environments/"+environmentID+"/entries?access_token="+accessToken
 
 const projectContainer = document.querySelector('section#projects-list')
-const modalContainer = document.querySelector('div#modal')
-
+const modalContainer = document.querySelector('section#modal-container')
 
 const body = document.querySelector('body')
-
-const projects = document.querySelectorAll('div.project')
-
-const modals = document.querySelectorAll('div#modal')
-const modalBG = document.querySelector('div#modal-bg')
-const modalLinks = modal.querySelectorAll('a')
-
-const openModal = document.querySelector('div#modal.show')
-
-const closeLinks = document.querySelectorAll('div.close a')
-
-
-
-
 
 
 const grabData = function () {
@@ -33,19 +20,23 @@ const grabData = function () {
         .then(response => response.json())
         .then(data => {
             return data.items.map(item => {
-                return item.fields
+
+                const rawContent = item.fields.content
+                const rendered = documentToHtmlString(rawContent)
+                
+                item.fields.content = rendered
+
+                return item.fields  
             })
         })
 }
 
 
-
 grabData()
     .then( data => {
-        console.log(data)
 
         projectContainer.innerHTML = ""
-        modal.innerHTML = ""
+        modalContainer.innerHTML = ""
 
         data.forEach(item => {
 
@@ -57,9 +48,18 @@ grabData()
             `
 
             modalContainer.innerHTML = modalContainer.innerHTML + `
-                        <div class="close"><a>close</a></div>
-                        <div data-modal="${item.tag}">${item.content}</div>
+                <div id="modal" data-modal="${item.tag}">
+                    <div class="close"><a>close</a></div>
+                    <div class="content">${item.content}</div>
+                </div>
             `
+
+            const projects = document.querySelectorAll('div.project')
+            const modals = document.querySelectorAll('div#modal')
+            const modalBG = document.querySelector('div#modal-bg')
+            const modalLinks = document.querySelectorAll('div#modal div.content a')
+            const closeLinks = document.querySelectorAll('div.close a')
+
 
             projects.forEach(project => {
                 project.addEventListener('click', function(event){
@@ -77,21 +77,39 @@ grabData()
                     console.log('hello')
                     
                 })
+
+                modals.forEach(modal => {
+                    project.addEventListener('click', function(event){
+                        if (project.dataset.modal == modal.dataset.modal) {
+                            modal.classList.toggle('show')
+                        }
+                    })
+                    
+                })
             })
+
+
+            const openModal = document.querySelector('div#modal.show')
+
+            closeLinks.forEach(close => {
+                close.addEventListener('click', function(event) {
+                    modals.forEach(modal => {
+                        modal.classList.remove('show')
+                    })
+                    modalBG.classList.remove('show')
+                })
+            })
+
+            modalBG.addEventListener('click', function(event) {
+                modals.forEach(modal => {
+                    modal.classList.remove('show')
+                })
+                modalBG.classList.remove('show')
+            })
+
+            
 
         })
     })
 
 
-
-closeLinks.forEach(close => {
-    close.addEventListener('click', function(event) {
-        openModal.classList.remove('show')
-        modalBG.classList.remove('show')
-    })
-})
-
-modalBG.addEventListener('click', function(event) {
-    openModal.classList.remove('show')
-    modalBG.classList.remove('show')
-})
