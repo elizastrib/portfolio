@@ -50,22 +50,38 @@
 
   <div id="modal-bg"></div>
 
-  <div id="modal">
-    <div class="close">
-      <a>close</a>
+  <section id="modal-container">
+    <div id="modal">
+      <div class="close">
+        <a>close</a>
+      </div>
+      <h2>this is a h2</h2>
+      <h4>this is a h4</h4>
+      <p>this is a paragraph</p>
+      <p>and another one</p>
+      <div class="image">
+        <img src="assets/view-from-this-side-1.png">
+        <h5>this is a caption</h5>
+      </div>
     </div>
-    <h2>this is a h2</h2>
-    <h4>this is a h4</h4>
-    <p>this is a paragraph</p>
-    <p>and another one</p>
-    <div class="image">
-      <img src="assets/view-from-this-side-1.png">
-      <h5>this is a caption</h5>
-    </div>
-  </div>
+  </section>
 
-
-  <script src="scripts/contentful.js"></script>
+<script
+      src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js"
+      charset="utf-8"
+    ></script>
+    <script>
+      var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
+    </script>
+    <script
+    src="https://unpkg.com/@contentful/rich-text-types@12.0.0/dist/rich-text-types.es5.js"
+    charset="utf-8"
+  ></script>
+    <script
+      src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+      charset="utf-8"
+    ></script>
+  <script type="module" src="scripts/contentful.js"></script>
   <!--<script src="scripts/modals.js"></script>-->
 
   </body>
