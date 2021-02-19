@@ -3,7 +3,7 @@ const environmentID = "master"
 const accessToken = "a9Vb129rJEq4_NumhQVPv8z0nCNY4Un22nLFpx6vWEg"
 const contentType = "resume"
 
-let url = "https://cdn.contentful.com/spaces/"+spaceID+"/environments/"+environmentID+"/entries?access_token="+accessToken+"&content_type="+contentType
+let url = "https://cdn.contentful.com/spaces/"+spaceID+"/environments/"+environmentID+"/entries?access_token="+accessToken+"&order=fields.order&content_type="+contentType
 
 
 const body = document.querySelector('body')
