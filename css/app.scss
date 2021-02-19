@@ -1,4 +1,4 @@
-
+@import "reset";
 @import "typography";
 
 @mixin center-position {
@@ -30,14 +30,12 @@ $secondary-color: #ffffff;
 $text-color: #2e3e4f;
 
 
-
 // GENERAL STYLES
 
 body {
     background-color: $primary-color;
     color: $secondary-color;    
 }
-
 
 
 // MAIN CONTENT
@@ -53,33 +51,41 @@ section#main {
 
     section {
         width: 45%;
-    }
 
+        &#bio {
+
+            div.links {
+
+                margin-top: 16px;
+            
+                a {
+                    margin-right: 16px;
+                    line-height: 2;
+                }
+            
+            }
+        }
+
+        &#projects-list {
+    
+            div.project {
+        
+                margin-bottom: 32px;
+                cursor: pointer;
+
+                &:hover h1 {
+                    text-decoration: underline;
+                }
+            
+                h1 {
+                    margin-bottom: 4px;
+                }
+            
+            }
+        }
+    }
+    
 }
-
-div.links {
-
-    margin-top: 0;
-
-    a {
-        margin-right: 20px;
-    }
-
-}
-
-div.project {
-
-    cursor: pointer;
-
-    h2 {
-        margin-bottom: 8px;
-    }
-
-    p{
-        margin-top:0px;
-    }
-}
-
 
 
 // MODAL
@@ -130,12 +136,13 @@ div#modal {
         }
     }
 
-    h2 {
-        margin-bottom: 40px;
+    h1 {
+        margin-bottom: 0px;
+        max-width: 90%;
     }
 
-    h4 {
-        margin-top: 16px;
+    h4, h5, p {
+        margin-bottom: 32px;
     }
 
     a {

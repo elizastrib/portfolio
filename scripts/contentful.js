@@ -4,8 +4,9 @@
 const spaceID = "3jcgtxpd2wcc"
 const environmentID = "master"
 const accessToken = "a9Vb129rJEq4_NumhQVPv8z0nCNY4Un22nLFpx6vWEg"
+const contentType = "project"
 
-const url = "https://cdn.contentful.com/spaces/"+spaceID+"/environments/"+environmentID+"/entries?access_token="+accessToken
+const url = "https://cdn.contentful.com/spaces/"+spaceID+"/environments/"+environmentID+"/entries?access_token="+accessToken+"&content_type="+contentType
 
 const projectContainer = document.querySelector('section#projects-list')
 const modalContainer = document.querySelector('section#modal-container')
@@ -45,7 +46,7 @@ grabData()
 
             projectContainer.innerHTML = projectContainer.innerHTML + `
                 <div class="project" data-modal="${item.tag}" data-color="${item.color}">
-                    <h2>${item.title}</h2>
+                    <h1>${item.title}</h1>
                     <p>${item.description}</p>
                 </div>
             `
