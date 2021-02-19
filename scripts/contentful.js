@@ -79,8 +79,6 @@ grabData()
                     })
             
                     modalBG.classList.toggle('show')
-            
-                    console.log('hello')
                     
                 })
 
@@ -94,8 +92,6 @@ grabData()
                 })
             })
 
-
-            const openModal = document.querySelector('div#modal.show')
 
             closeLinks.forEach(close => {
                 close.addEventListener('click', function(event) {
