@@ -9,8 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Eliza Stribling — Portfolio</title>
 		<meta name="description" content="Eliza Stribling is a digital designer in Melbourne, Australia. She loves croissants, the internet and taking photos of dogs on the street.">
-		<link rel="icon" href="screen-shot-2019-05-30-at-7.55.24-pm.png">
-		<link rel="apple-touch-icon" href="screen-shot-2019-05-30-at-7.55.24-pm.png">
+		<!--<link rel="icon" href="screen-shot-2019-05-30-at-7.55.24-pm.png">
+		<link rel="apple-touch-icon" href="screen-shot-2019-05-30-at-7.55.24-pm.png">-->
 		<meta property="og:title" content="Eliza Stribling — Portfolio">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://www.elizastribling.com/">
@@ -26,24 +26,17 @@
     <section id="main">
       
       <section id="bio">
-        <h1>Eliza is a designer. She loves dogs and the internet, and, according to Spotify, spends an unhealthy amount of time listening to Harry Styles.</h1>
+        <h1>Hi, I'm Eliza. I love dogs and the internet, and, according to Spotify, spend an unhealthy amount of time listening to Harry Styles. I am currently working as a product designer at Redbubble.</h1>
         <div class="links">
-          <a>Resume</a>
-          <a>LinkedIn</a>
-          <a>Instagram</a>
+          <!-- <a class="resume">Resume</a> -->
+          <a href="https://www.linkedin.com/in/elizastribling/">LinkedIn</a>
+          <a href="https://www.instagram.com/elizastribling.design/">Instagram</a>
           <a>elizastribling@gmail.com</a>
         </div>
       </section>
 
       <section id="projects-list">
-        <div class="project">
-          <h2>Project title 1</h2>
-          <p>Project description</p>
-        </div>
-        <div class="project">
-          <h2>Project title 2</h2>
-          <p>Project description</p>
-        </div>
+        
       </section>
 
   </section>
@@ -51,37 +44,21 @@
   <div id="modal-bg"></div>
 
   <section id="modal-container">
+    <div id="modal"></div>
+  </section>
+
+  <section id="resume-container">
     <div id="modal">
-      <div class="close">
-        <a>close</a>
-      </div>
-      <h2>this is a h2</h2>
-      <h4>this is a h4</h4>
-      <p>this is a paragraph</p>
-      <p>and another one</p>
-      <div class="image">
-        <img src="assets/view-from-this-side-1.png">
-        <h5>this is a caption</h5>
-      </div>
+      <div class="close"><a>close</a></div>
     </div>
   </section>
 
-<script
-      src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js"
-      charset="utf-8"
-    ></script>
-    <script>
-      var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
-    </script>
-    <script
-    src="https://unpkg.com/@contentful/rich-text-types@12.0.0/dist/rich-text-types.es5.js"
-    charset="utf-8"
-  ></script>
-    <script
-      src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
-      charset="utf-8"
-    ></script>
+  <script src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js" charset="utf-8"></script>
+  <script> var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below </script>
+  <script src="https://unpkg.com/@contentful/rich-text-types@12.0.0/dist/rich-text-types.es5.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js" charset="utf-8"></script>
   <script type="module" src="scripts/contentful.js"></script>
+  <script type="module" src="scripts/resume.js"></script>
   <!--<script src="scripts/modals.js"></script>-->
 
   </body>
