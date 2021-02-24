@@ -1,22 +1,13 @@
-@font-face {
-    font-family: Space Grotesk;
-    src: url(fonts/spacegrotesk-regular.woff2), url(fonts/spacegrotesk-regular.woff);
-} 
-
-@font-face {
-    font-family: Space Grotesk Bold;
-    src: url(spacegrotesk-bold.woff2), url(spacegrotesk-regular.woff);
-}
-
 body {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 15px;
     line-height: 1.5;
+    font-weight: 300;
 }
 
 h1 {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h2 {
@@ -25,7 +16,7 @@ h2 {
 
 h3 {
     font-size: 15px;
-    font-family: Space Grotesk Bold, sans-serif;
+    font-weight: 500;
 }
 
 h4 {
@@ -40,6 +31,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     color: #ffffff;
+    font-weight: 500;
 }
 
 a:hover {

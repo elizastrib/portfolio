@@ -111,6 +111,7 @@ div#modal {
     overflow: scroll;
     padding: 32px 48px;
     width: 50vw;
+    max-width: 1000px;
 
     background-color: $secondary-color;
     color: $text-color;
@@ -179,4 +180,49 @@ section#resume-container {
         }
 
     }
+}
+
+
+
+// RESPONSIVENESS
+
+@media all and (max-width: 750px) {
+
+    section#main {
+        flex-direction: column;
+        transform: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 32px;
+        display: block;
+        flex: none;
+        max-width: none;
+        margin-bottom: 100px;
+
+        section {
+            width: 100%;
+
+            &#bio {
+                margin-bottom: 80px;
+            }
+        }
+
+    }
+
+    div#modal {
+        width: 100vw;
+        max-width: 100%;
+        height: auto;
+        min-height: 100vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: none;
+
+        margin-top: 0;
+        padding-bottom: 100px;
+    }
+
 }
